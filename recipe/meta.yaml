@@ -1,5 +1,5 @@
 {% set name = "rbeast" %}
-{% set version = "0.1.19" %}
+{% set version = "0.1.20" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Rbeast-{{ version }}.tar.gz
-  sha256: 60c1d7f02588155f92326663c355e04e5875634003133a258e7a0f10a43f719a
+  sha256: ab100ae4480460307164805fc434b01b2a6b1b77c343c038cbfca9113fbecb2c
 
 build:
   skip: true  # [py<37 or win]
@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
