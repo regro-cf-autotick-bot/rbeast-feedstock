@@ -23,7 +23,7 @@ requirements:
     - python
     - setuptools >=61
     - wheel
-    - numpy >=1.17.3
+    - numpy >=1.17.3,<2
     - pip
   run:
     - python
