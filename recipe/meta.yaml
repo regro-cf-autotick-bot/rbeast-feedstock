@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Rbeast-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/Rbeast-{{ version }}.tar.gz
   sha256: 8e0eac99391667a4004d236662dc410760383f341bf19de40698d6e50bf87eaf
 
 build:
   skip: true  # [py<37 or win]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
