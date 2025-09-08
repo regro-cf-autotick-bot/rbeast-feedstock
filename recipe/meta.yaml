@@ -10,8 +10,8 @@ source:
   sha256: 8e0eac99391667a4004d236662dc410760383f341bf19de40698d6e50bf87eaf
 
 build:
-  skip: true  # [py<37 or win]
-  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [win]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
 
 requirements:
@@ -22,13 +22,12 @@ requirements:
   host:
     - python
     - setuptools >=61
-    - wheel
-    - numpy >=1.17.3,<2
+    - numpy >=1.17.3
     - pip
   run:
     - python
     - matplotlib-base >=2.2.0
-    - {{ pin_compatible('numpy') }}
+    - numpy
 
 test:
   imports:
